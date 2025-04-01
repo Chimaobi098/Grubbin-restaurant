@@ -1,0 +1,253 @@
+/* Universal Reset for Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Section Margin */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Landing Page */
+.landingPage {
+  display: flex;
+  max-width: 100vw;
+  /* height: 100vh; */
+}
+
+.landingPageLeftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+
+.landingPageHeader {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.6rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.landingPageBody {
+  margin-bottom: 2rem;
+  margin-right: 7.5rem;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.12em;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.landingPageRightSide {
+  width: 55%;
+}
+
+/* ABOUT US PAGE */
+.aboutUsPage {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.aboutUsLeftSide {
+  width: 45%;
+  display: flex;
+  align-items: center;
+}
+
+.aboutUsRightSide {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.aboutUsRightSideContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-right: 100px;
+  margin-left: 60px;
+}
+
+.aboutUsRedText {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.2em;
+  color: var(--primary-red);
+}
+
+.aboutUsHeader {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.6rem;
+  letter-spacing: 0.02em;
+}
+
+.aboutUsBodyText {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.12em;
+  color: #000;
+}
+
+.aboutUsReviews {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "BespokeStencil-LightItalic";
+}
+
+.aboutUsReviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+  .landingPageBody {
+    margin-right: 0;
+  }
+}
+
+/* Tablet breakpoint (between 768px and 992px) */
+@media screen and (max-width: 992px) {
+  .landingPageHeader {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    letter-spacing: 0.01em;
+  }
+  .landingPageBody {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    letter-spacing: 0.12em;
+  }
+
+  .aboutUsLeftSide {
+    width: 100%;
+    /* justify-content: center; */
+    /* margin: 0; */
+  }
+
+  .aboutUsRightSideContainer {
+    margin-right: 50px;
+    margin-left: 40px;
+    /* border: 20px solid salmon; */
+  }
+
+  .aboutUsHeader {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+  }
+
+  .aboutUsBodyText {
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+  }
+}
+
+/* Mobile breakpoint (<= 768px) */
+@media screen and (max-width: 768px) {
+  section {
+    margin-bottom: 2rem;
+  }
+  .landingPage {
+    flex-direction: column-reverse;
+  }
+
+  .landingPageLeftSide,
+  .landingPageRightSide {
+    width: 100%;
+  }
+  .landingPageRightSide {
+    margin-bottom: 1rem;
+  }
+
+  .landingPageHeader {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .landingPageBody {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0.12em;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .btnContainer {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .aboutUsPage {
+    margin-top: 4rem;
+    flex-direction: column;
+  }
+
+  .aboutUsLeftSide,
+  .aboutUsRightSide {
+    width: 100%;
+  }
+  .aboutUsRightSide {
+    margin-top: 2rem;
+    /* border: 5px solid skyblue; */
+  }
+
+  .aboutUsRightSideContainer {
+    margin: 0;
+    gap: 1rem;
+    /* border: 5px solid palegreen; */
+  }
+
+  .aboutUsHeader {
+    font-size: 2rem;
+    line-height: 3.2rem;
+    text-align: center;
+  }
+
+  .aboutUsBodyText {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+
+  .aboutUsRedText {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .aboutUsReviews {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .foodBowlImage {
+    justify-content: center;
+    /* text-align: center; */
+  }
+}

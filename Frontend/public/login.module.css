@@ -1,0 +1,112 @@
+.loginContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+/* Left Section (Form) */
+.leftSection {
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Groups */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--primary-red);
+}
+
+/* Submit Button */
+.submitBtn {
+  background-color: var(--primary-red);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #ff2b2b;
+}
+
+/* Footer Text */
+.footerText {
+  margin-top: 1rem;
+  color: #666;
+}
+
+.footerText a {
+  color: var(--primary-red);
+  text-decoration: none;
+}
+
+/* Right Section (Decorative / Background Image) */
+.rightSection {
+  flex: 1;
+  background: url("https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_1200/login-image_c5hh56?_a=BAMAJaFD0")
+    center/cover no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .leftSection {
+    padding: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .subtitle {
+    text-align: center;
+  }
+
+  .rightSection {
+    display: none;
+  }
+}

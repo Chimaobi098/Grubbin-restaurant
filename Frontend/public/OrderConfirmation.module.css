@@ -1,0 +1,82 @@
+:root {
+  --primary-red: #ff003d;
+  --text-color: #333;
+  --border-gray: #ddd;
+  --bg-gray: #f5f5f5;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.confirmationContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--font-family);
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--primary-red);
+  margin-bottom: 2rem;
+}
+
+.orderBox {
+  background: #fff;
+  border: 1px solid var(--border-gray);
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.orderNumber,
+.estimatedTime {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.itemsTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.itemsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itemRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--border-gray);
+  color: var(--text-color);
+}
+
+.itemRow:last-child {
+  border-bottom: none;
+}
+
+.totalPrice {
+  /* color: var(--primary-red); */
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+.homeBtn {
+  background: var(--primary-red);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.homeBtn:hover {
+  background: #e00038;
+}

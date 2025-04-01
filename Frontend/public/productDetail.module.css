@@ -1,0 +1,181 @@
+.productDetailContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.backBtn {
+  display: none;
+}
+
+/* Image Section */
+.imageSection {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.productImage {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Information Section */
+.infoSection {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.productName {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.productPrice {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+}
+
+.productDescription {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Counter Section */
+.counterSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.counterBtn {
+  /* background-color: var(--primary-red); */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.counterBtn:hover {
+  background-color: #ff2b2b;
+}
+
+.quantity {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Ingredients Section */
+.ingredientsSection {
+  margin-top: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.ingredientList {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #555;
+}
+
+.ingredientItem {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Add to Cart Button */
+.addToCartBtn {
+  background-color: var(--primary-red);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.addToCartBtn:hover {
+  background-color: #ff2b2b;
+}
+
+/* Reviews Section */
+.reviewsSection {
+  margin-top: 1rem;
+}
+
+.reviewItem {
+  background-color: #f8f8f8;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.reviewUser {
+  font-weight: bold;
+  color: #222;
+}
+
+.reviewComment {
+  font-style: italic;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.reviewRating {
+  color: var(--primary-red);
+  font-weight: bold;
+}
+
+.noReviews {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media screen and (max-width: 768px) {
+  .productDetailContainer {
+    padding: 0;
+  }
+
+  .productName,
+  .productPrice {
+    font-size: 1.5rem;
+  }
+
+  .infoSection {
+    gap: 1rem;
+    text-align: center;
+  }
+  .counterSection {
+    justify-content: center;
+  }
+
+  .backBtn {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,139 @@
+.orderHistoryContainer {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.backBtn {
+  display: none;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-red);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.emptyText {
+  text-align: center;
+  color: #555;
+}
+
+.orderList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Single Order Card */
+.orderCard {
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.orderNumber {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.orderStatus {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--primary-red); /* Your brand's primary red */
+  border: 1px solid var(--primary-red);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.orderDate {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Items List */
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.itemRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemName {
+  font-size: 1rem;
+  color: #333;
+  flex: 1;
+}
+
+.itemQuantity {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 1rem;
+}
+
+.itemPrice {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-red);
+}
+
+/* Footer */
+.orderFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.totalAmount {
+  font-size: 1.1rem;
+  color: #222;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .orderHistoryContainer {
+    padding: 1rem;
+  }
+  .orderCard {
+    padding: 1rem;
+  }
+  .orderNumber {
+    font-size: 1.1rem;
+  }
+  .itemName,
+  .itemPrice {
+    font-size: 0.95rem;
+  }
+  .itemQuantity {
+    margin: 0 0.5rem;
+  }
+  .title {
+    font-size: 1.75rem;
+  }
+  .backBtn {
+    display: inline-block;
+  }
+}

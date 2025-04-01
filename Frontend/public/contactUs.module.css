@@ -1,0 +1,143 @@
+.contactContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.heroSection {
+  background: url("https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_1200/couple-enjoying-food-restaurant_k4bpx8?_a=BAMAJaFD0")
+    center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.heroSection::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.subtitle {
+  position: relative;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  z-index: 1;
+}
+
+/* Content Layout */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Contact Info Section */
+.infoSection {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.infoText {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Form Section */
+.formSection {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.input,
+.textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--primary-red);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background-color: var(--primary-red);
+  color: #fff;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background-color: #ff2b2b;
+}
+
+@media screen and (max-width: 768px) {
+  .title,
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .subtitle,
+  .infoText,
+  .label {
+    font-size: 1rem;
+  }
+  .content {
+    padding: 0;
+  }
+}

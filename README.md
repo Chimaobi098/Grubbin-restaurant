@@ -1,6 +1,8 @@
 # Grubbin - The Ultimate Restaurant Experience
 
 [Live Demo](https://grubbin-production.up.railway.app)
+[![Live Demo](https://grubbin-production.up.railway.app)
+
 
 Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s revolutionizing the way you dine! Built on the robust PERN stack (PostgreSQL, Express, React, Node.js), Grubbin offers a seamless ordering experience, from exploring a gourmet menu to placing orders with lightning-fast speed. Our app is designed to dazzle both foodies and restaurateurs alike, making every meal an unforgettable event.
 
@@ -32,6 +34,43 @@ Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s re
 - **React:** 
 - **React Router:**
 - **CSS Modules:**
+
+
+### Dependencies 
+
+- @prisma/client: Prisma for database access and manipulation.
+- bcryptjs: Provides password hashing and encryption functionality.
+- cloudinary: A library for managing image and media uploads using Cloudinary's powerful API.
+- cookie-parser: Middleware for parsing cookies from incoming HTTP requests.
+- cors: Enables Cross-Origin Resource Sharing (CORS) to allow your backend to interact with different origins.
+- dotenv: Loads environment variables from a .env file into process.env for easy configuration.
+- express: A minimalist web framework for Node.js, used to build robust APIs.
+- express-validator: Offers a suite of validation and sanitization utilities for Express routes.
+- jsonwebtoken: For generating and verifying JSON Web Tokens (JWTs) used in authentication.
+- axios: A promise-based HTTP client for making API requests from both the browser and Node.js.
+- react-icons: A collection of customizable icons for React applications.
+- react-paystack: A React integration that simplifies working with the Paystack payment gateway.
+- react-router-dom: A routing library for React that enables navigation among views of various components.
+- react-toastify: Displays beautiful and customizable toast notifications in React applications
+
+
+## 📸 Screenshots
+
+Here are a few highlights from the app (replace these sample image links with your own):
+
+### **Home Page**
+![Home Page Screenshot](https://via.placeholder.com/800x400?text=Home+Page+Screenshot)
+
+### **Menu Page**
+![Menu Page Screenshot](https://via.placeholder.com/800x400?text=Menu+Page+Screenshot)
+
+### **Checkout Page**
+![Checkout Page Screenshot](https://via.placeholder.com/800x400?text=Checkout+Page+Screenshot)
+
+> **Tip:** Store your screenshots in a folder (e.g., `screenshots`) and reference them locally:  
+> `![Alt Text](./screenshots/homepage.png)`
+
+---
 
 
 ## 🔧 Installation & Setup
@@ -79,22 +118,6 @@ Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s re
    npm run dev
 
 
-### Dependencies 
-
-- @prisma/client: Prisma for database access and manipulation.
-- bcryptjs: Provides password hashing and encryption functionality.
-- cloudinary: A library for managing image and media uploads using Cloudinary's powerful API.
-- cookie-parser: Middleware for parsing cookies from incoming HTTP requests.
-- cors: Enables Cross-Origin Resource Sharing (CORS) to allow your backend to interact with different origins.
-- dotenv: Loads environment variables from a .env file into process.env for easy configuration.
-- express: A minimalist web framework for Node.js, used to build robust APIs.
-- express-validator: Offers a suite of validation and sanitization utilities for Express routes.
-- jsonwebtoken: For generating and verifying JSON Web Tokens (JWTs) used in authentication.
-- axios: A promise-based HTTP client for making API requests from both the browser and Node.js.
-- react-icons: A collection of customizable icons for React applications.
-- react-paystack: A React integration that simplifies working with the Paystack payment gateway.
-- react-router-dom: A routing library for React that enables navigation among views of various components.
-- react-toastify: Displays beautiful and customizable toast notifications in React applications
 
 
 
@@ -114,18 +137,7 @@ Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s re
 
 
 
-🛠️ API Endpoints
 
-Authentication
-POST /auth/register — Create a new user account.
-POST /auth/login — Log in and receive a secure token.
-GET /auth/me — Retrieve current user details.
-Menu
-GET /api/menu — Fetch all tantalizing menu items.
-POST /api/menu — Add new menu items (for authorized users).
-Orders
-POST /api/orders — Place a new order effortlessly.
-GET /api/orders/:id — Retrieve detailed order information.
 
 ### **Contributing**
 

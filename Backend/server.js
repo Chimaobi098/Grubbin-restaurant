@@ -11,7 +11,7 @@ const apiRoute = require("./routes/api");
 const authRoute = require("./routes/auth");
 
 const origin =
-  process.env.NODE_ENV === "production"
+  process.env.NODE_ENV == "production"
     ? process.env.FRONTEND_PROD_URL
     : process.env.FRONTEND_DEV_URL;
 

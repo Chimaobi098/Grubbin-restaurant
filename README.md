@@ -59,7 +59,7 @@ Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s re
 Here are a few highlights from the app (replace these sample image links with your own):
 
 ### **Home Page**
-![Home Page Screenshot](https://via.placeholder.com/800x400?text=Home+Page+Screenshot)
+![Home Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_1200/aboutUsImage_wr55ai?_a=BAMAJaFD0)
 
 ### **Menu Page**
 ![Menu Page Screenshot](https://via.placeholder.com/800x400?text=Menu+Page+Screenshot)
@@ -67,10 +67,6 @@ Here are a few highlights from the app (replace these sample image links with yo
 ### **Checkout Page**
 ![Checkout Page Screenshot](https://via.placeholder.com/800x400?text=Checkout+Page+Screenshot)
 
-> **Tip:** Store your screenshots in a folder (e.g., `screenshots`) and reference them locally:  
-> `![Alt Text](./screenshots/homepage.png)`
-
----
 
 
 ## 🔧 Installation & Setup

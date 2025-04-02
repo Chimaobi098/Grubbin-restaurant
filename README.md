@@ -1,8 +1,10 @@
 # Grubbin - The Ultimate Restaurant Experience
 
+[Live Demo](https://grubbin-production.up.railway.app)
+
 Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s revolutionizing the way you dine! Built on the robust PERN stack (PostgreSQL, Express, React, Node.js), Grubbin offers a seamless ordering experience, from exploring a gourmet menu to placing orders with lightning-fast speed. Our app is designed to dazzle both foodies and restaurateurs alike, making every meal an unforgettable event.
 
-## ✨ Features
+##  Features
 
 - **Cutting-Edge User Authentication:** Secure sign-up, login, and profile management powered by JWT .
 - **Mouthwatering Menu:** Discover an extensive, visually appealing menu that highlights each delectable dish.
@@ -10,7 +12,7 @@ Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s re
 - **Interactive Reviews:** Share and read reviews that add a personal touch to every dining experience.
 - **Secure Payments:** Fast and secure transactions powered by Paystack.
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 [![Node.js](https://img.shields.io/badge/Node.js-18.x-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)  
 [![Express](https://img.shields.io/badge/Express-4.21.2-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)  
@@ -77,7 +79,7 @@ Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s re
    npm run dev
 
 
-### **Dependencies **
+### Dependencies 
 
 - @prisma/client: Prisma for database access and manipulation.
 - bcryptjs: Provides password hashing and encryption functionality.

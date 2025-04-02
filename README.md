@@ -32,40 +32,46 @@ Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s re
    git clone https://github.com/your-username/grubbin.git
    cd grubbin/backend
    
-2. Install Dependencies:
-npm install
-Configure Environment Variables: Create a .env file in the backend directory and add:
-DATABASE_URL=your_postgresql_database_url
-FRONTEND_PROD_URL=your_frontend_url
-JWT_SECRET=your_secret_key
-NODE_ENV=development
-Run Database Migrations:
-npx prisma migrate dev --name init
-Start the Server:
-npm start
-Frontend Setup (Vite)
-Navigate to the Frontend Directory:
-cd ../frontend
-Install Dependencies:
-npm install
-Start the Vite App:
-npm run dev
-🌍 Deployment
+2. **Install Dependencies:**
+   ```bash
+   npm install
 
-Backend (Railway)
-Push Your Changes:
-git push origin main
-Connect Your Repository to Railway:
-Set your environment variables (like DATABASE_URL and FRONTEND_PROD_URL) in Railway.
-Update Start Script:
-Ensure your package.json has the following start script:
-"start": "npx prisma migrate deploy && node server.js"
-Deploy and Rule the World!
-Frontend (Railway)
-Push Your Frontend Code:
-Connect your repository to Railway.
-Set Environment Variables in Railway (if needed).
-Deploy and Enjoy Blazing-Fast Performance!
+3. **Configure Environment Variables:** Create a .env file in the backend directory and add:
+   ```bash
+   DATABASE_URL=your_postgresql_database_url
+   FRONTEND_PROD_URL=your_frontend_url
+   JWT_SECRET=your_secret_key
+   NODE_ENV=development
+   CLOUDINARY_API_KEY = your_secret_key
+   CLOUDINARY_API_SECRET = your_secret
+
+4. Run Database Migrations:
+   ```bash
+   npx prisma migrate dev --name init
+
+5. Start the Server:
+   ```bash
+   node server.js
+
+### **Frontend Setup (Vite)**
+
+1. **Navigate to the Frontend Directory:**
+   ```bash
+   cd ../frontend
+   
+2. **Install Dependencies:**
+   ```bash
+   npm install
+
+3. **Start the Vite App::** 
+   ```bash
+   npm run dev
+
+
+
+
+
+
 🛠️ API Endpoints
 
 Authentication
@@ -78,13 +84,11 @@ POST /api/menu — Add new menu items (for authorized users).
 Orders
 POST /api/orders — Place a new order effortlessly.
 GET /api/orders/:id — Retrieve detailed order information.
-🤝 Contributing
 
-Fork the Repository.
-Create a Feature Branch:
-git checkout -b feature-amazing-new-feature
-Commit Your Changes:
-git commit -m 'Add amazing new feature'
-Push to Your Branch:
-git push origin feature-amazing-new-feature
-Open a Pull Request and Share Your Brilliance!
+### **Contributing**
+
+If you would like to contribute to this project:
+
+Fork the repository.
+Create a new branch for your feature/bugfix.
+Commit your changes and open a pull request.

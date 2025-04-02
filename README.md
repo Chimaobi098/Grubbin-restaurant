@@ -64,13 +64,13 @@ Here are a few highlights from the app
 ![Menu Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_1200/Screenshot_2025-04-02_at_17.30.45_t2cwzo?_a=BAMAJaFD0)
 
 ### **Order Confirmation  Page**
-![Order Confirmation Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_300/Simulator_Screenshot_-_iPhone_15_Pro_-_2025-03-30_at_10.26.30_xetqeb?_a=BAMAJaFD0)
+![Order Confirmation Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_400/Simulator_Screenshot_-_iPhone_15_Pro_-_2025-03-30_at_10.26.30_xetqeb?_a=BAMAJaFD0)
 
 ### **Profile Page**
-![Profile Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_200/Simulator_Screenshot_-_iPhone_15_Pro_-_2025-03-30_at_10.24.10_qeu7il?_a=BAMAJaFD0)
+![Profile Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_300/Simulator_Screenshot_-_iPhone_15_Pro_-_2025-03-30_at_10.24.10_qeu7il?_a=BAMAJaFD0)
 
 ### **Paystack Api Page**
-![Paystack Api Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_300/Simulator_Screenshot_-_iPhone_15_Pro_-_2025-03-30_at_10.25.42_tegklf?_a=BAMAJaFD0)
+![Paystack Api Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_350/Simulator_Screenshot_-_iPhone_15_Pro_-_2025-03-30_at_10.25.42_tegklf?_a=BAMAJaFD0)
 
 ## 🔧 Installation & Setup
 

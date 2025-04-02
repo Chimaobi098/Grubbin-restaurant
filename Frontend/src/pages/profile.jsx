@@ -72,7 +72,8 @@ const Profile = () => {
   }, 0);
 
   //Average Order Value
-  const averageOrderValue = userTotalSpent / orders.length;
+  const averageOrderValue =
+    orders.length > 0 ? userTotalSpent / orders.length : 0;
 
   const handleLogout = () => {
     logout();

@@ -1,7 +1,6 @@
 # Grubbin - The Ultimate Restaurant Experience
 
 [Live Demo](https://grubbin-production.up.railway.app)
-[![Live Demo](https://grubbin-production.up.railway.app)
 
 
 Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s revolutionizing the way you dine! Built on the robust PERN stack (PostgreSQL, Express, React, Node.js), Grubbin offers a seamless ordering experience, from exploring a gourmet menu to placing orders with lightning-fast speed. Our app is designed to dazzle both foodies and restaurateurs alike, making every meal an unforgettable event.
@@ -56,17 +55,16 @@ Welcome to **Grubbin**, the groundbreaking full-stack restaurant app that’s re
 
 ## 📸 Screenshots
 
-Here are a few highlights from the app (replace these sample image links with your own):
+Here are a few highlights from the app 
 
 ### **Home Page**
-![Home Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_1200/aboutUsImage_wr55ai?_a=BAMAJaFD0)
+![Home Page Screenshot](https://res.cloudinary.com/ditqlruxn/image/upload/f_auto/q_auto/w_1200/Screenshot_2025-04-02_at_17.30.22_lorjd6?_a=BAMAJaFD0)
 
 ### **Menu Page**
 ![Menu Page Screenshot](https://via.placeholder.com/800x400?text=Menu+Page+Screenshot)
 
 ### **Checkout Page**
 ![Checkout Page Screenshot](https://via.placeholder.com/800x400?text=Checkout+Page+Screenshot)
-
 
 
 ## 🔧 Installation & Setup
@@ -113,32 +111,12 @@ Here are a few highlights from the app (replace these sample image links with yo
    ```bash
    npm run dev
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### **Contributing**
 
 If you would like to contribute to this project:
 
-Fork the repository.
-Create a new branch for your feature/bugfix.
-Commit your changes and open a pull request.
+- Fork the repository.
+- Create a new branch for your feature/bugfix.
+- Commit your changes and open a pull request.
+
+

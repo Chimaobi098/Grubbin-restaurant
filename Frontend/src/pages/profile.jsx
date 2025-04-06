@@ -7,7 +7,7 @@ import OrderHistory from "./orderHistory";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const [person, setPerson] = useState("");
+  const [person, setPerson] = useState({});
   const [orders, setOrders] = useState([]);
   const { logout, setLoading } = useContext(AuthContext);
 

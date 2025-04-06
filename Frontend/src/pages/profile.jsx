@@ -9,16 +9,18 @@ const Profile = () => {
   const navigate = useNavigate();
   const [person, setPerson] = useState("");
   const [orders, setOrders] = useState([]);
-  const { logout } = useContext(AuthContext);
+  const { logout, setLoading } = useContext(AuthContext);
 
   useEffect(() => {
+    setLoading(true);
     API.get("/api/profile", { withCredentials: true })
       .then((response) => {
         setPerson(response.data);
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+      .finally(setLoading(false));
   }, []);
 
   useEffect(() => {

@@ -7,8 +7,9 @@ import { ToastContainer, toast } from "react-toastify";
 import { IoIosArrowBack } from "react-icons/io";
 
 const ProductDetail = () => {
-  const notify = () => toast("Added succesfully");
-  //toast
+  const notify = () => toast("Added succesfully"); //toast
+
+  const { setLoading } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const [item, setItem] = useState({});
@@ -19,13 +20,16 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
+    setLoading(true);
+
     API.get(`/api/menu/${menuid}`)
       .then((response) => {
         setItem(response.data);
       })
       .catch((err) => {
         console.error(err);
-      });
+      })
+      .finally(setLoading(false));
   }, [menuid]);
 
   const increment = () => setQuantity((prev) => (prev < 9 ? prev + 1 : prev));

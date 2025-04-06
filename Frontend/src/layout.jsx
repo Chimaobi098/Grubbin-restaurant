@@ -12,9 +12,11 @@ import { IoMenuOutline } from "react-icons/io5";
 
 import { useContext, useState } from "react";
 import CartPopup from "./pages/Cart";
+import LoadingScreen from "../components/loadingScreen";
 import { AuthContext } from "../context/authContext";
 
 const Layout = () => {
+  const { loading } = useContext(AuthContext);
   const navigate = useNavigate();
   const [isCartOpen, setCartOpen] = useState(false);
   const { cart, user } = useContext(AuthContext);
@@ -42,6 +44,8 @@ const Layout = () => {
     <>
       <ScrollRestoration />
       <div className={styles.mainBodyContainer}>
+        {loading && <LoadingScreen />}
+
         <header className={styles.header}>
           <div className={styles.companyDetails}>
             <img

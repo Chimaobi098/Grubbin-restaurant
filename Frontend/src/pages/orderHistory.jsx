@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../../public/orderHistory.module.css";
 import API from "../../api";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
 const OrderHistory = () => {
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
+  const { setLoading } = useContext(AuthContext);
 
   useEffect(() => {
+    setLoading(true);
     API.get("/api/orders", { withCredentials: true })
       .then((response) => {
         setOrders(response.data);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err))
+      .finally(setLoading(false));
   }, []);
 
   return (

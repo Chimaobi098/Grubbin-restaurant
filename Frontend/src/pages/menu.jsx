@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../../public/menu.module.css";
 import MenuCard from "../../components/menuCard";
 import API from "../../api";
+import { AuthContext } from "../../context/authContext";
 
 const Menu = () => {
   const [menu, setMenu] = useState([]);
+  const { setLoading } = useContext(AuthContext);
 
   useEffect(() => {
+    setLoading(true);
     API.get("/api/menu", { withCredentials: true })
       .then((response) => {
         setMenu(response.data);
       })
       .catch((error) => {
         console.error(error);
-      });
+      })
+      .finally(setLoading(false));
   }, []);
 
   return (

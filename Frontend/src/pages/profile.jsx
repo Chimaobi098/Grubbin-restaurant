@@ -34,6 +34,8 @@ const Profile = () => {
     fetchData();
   }, []);
 
+  console.log("Profile component mounted");
+
   const formattedDate = new Date().toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",

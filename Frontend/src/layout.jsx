@@ -40,11 +40,14 @@ const Layout = () => {
     }
   }
 
+  // If still loading, render only the loading screen.
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <>
       <ScrollRestoration />
-      {loading && <LoadingScreen />}
-
       <div className={styles.mainBodyContainer}>
         <header className={styles.header}>
           <div className={styles.companyDetails}>

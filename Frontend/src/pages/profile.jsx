@@ -12,23 +12,23 @@ const Profile = () => {
   const { logout, setLoading } = useContext(AuthContext);
 
   useEffect(() => {
-    API.get("/api/profile", { withCredentials: true })
-      .then((response) => {
-        setPerson(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const [profileRes, ordersRes] = await Promise.all([
+          API.get("/api/profile", { withCredentials: true }),
+          API.get("/api/orders", { withCredentials: true }),
+        ]);
+        setPerson(profileRes.data);
+        setOrders(ordersRes.data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  useEffect(() => {
-    setLoading(true);
-    API.get("/api/orders", { withCredentials: true })
-      .then((response) => {
-        setOrders(response.data);
-      })
-      .catch((err) => console.error(err))
-      .finally(setLoading(false));
+    fetchData();
   }, []);
 
   const formattedDate = new Date().toLocaleDateString("en-US", {

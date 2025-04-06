@@ -12,23 +12,23 @@ const Profile = () => {
   const { logout, setLoading } = useContext(AuthContext);
 
   useEffect(() => {
-    setLoading(true);
     API.get("/api/profile", { withCredentials: true })
       .then((response) => {
         setPerson(response.data);
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(setLoading(false));
+      });
   }, []);
 
   useEffect(() => {
+    setLoading(true);
     API.get("/api/orders", { withCredentials: true })
       .then((response) => {
         setOrders(response.data);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err))
+      .finally(setLoading(false));
   }, []);
 
   const formattedDate = new Date().toLocaleDateString("en-US", {

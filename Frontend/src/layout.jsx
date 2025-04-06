@@ -43,9 +43,9 @@ const Layout = () => {
   return (
     <>
       <ScrollRestoration />
-      <div className={styles.mainBodyContainer}>
-        {loading && <LoadingScreen />}
+      {loading && <LoadingScreen />}
 
+      <div className={styles.mainBodyContainer}>
         <header className={styles.header}>
           <div className={styles.companyDetails}>
             <img

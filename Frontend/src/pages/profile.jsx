@@ -15,7 +15,6 @@ const Profile = () => {
     const fetchData = async () => {
       try {
         console.log("Setting loading true");
-        setLoading(true);
         const [profileRes, ordersRes] = await Promise.all([
           API.get("/api/profile", { withCredentials: true }),
           API.get("/api/orders", { withCredentials: true }),

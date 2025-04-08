@@ -11,7 +11,7 @@ const OrderHistory = () => {
   const { setLoading } = useContext(AuthContext);
 
   useEffect(() => {
-    console.log("Order history useEffect: setLoading(true)");
+    // console.log("Order history useEffect: setLoading(true)");
 
     setLoading(true);
     API.get("/api/orders", { withCredentials: true })
@@ -20,9 +20,9 @@ const OrderHistory = () => {
       })
       .catch((err) => console.error(err))
       .finally(() => {
-        console.log(
-          "Order history useEffect: setLoading(false) -- after fetch"
-        );
+        // console.log(
+        //   "Order history useEffect: setLoading(false) -- after fetch"
+        // );
 
         setLoading(false);
       });

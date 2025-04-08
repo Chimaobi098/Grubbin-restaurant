@@ -15,7 +15,7 @@ const Profile = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        console.log("Profile useEffect: setLoading(true)");
+        // console.log("Profile useEffect: setLoading(true)");
 
         const [profileRes, ordersRes] = await Promise.all([
           API.get("/api/profile", { withCredentials: true }),
@@ -28,7 +28,7 @@ const Profile = () => {
         console.error("Fetch error:", err);
       } finally {
         setLoading(false);
-        console.log("Profile useEffect: setLoading(false) -- after fetch");
+        // console.log("Profile useEffect: setLoading(false) -- after fetch");
       }
     };
 
@@ -37,7 +37,7 @@ const Profile = () => {
 
   console.log("Profile component mounted");
 
-  const formattedDate = new Date().toLocaleDateString("en-US", {
+  const formattedDate = new Date(person.createdAt).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -90,6 +90,7 @@ const Profile = () => {
 
   return (
     <div className={styles.profileContainer}>
+      {console.log(person)}
       {/* Header / Hero */}
       <header className={styles.header}>
         <h1 className={styles.headerTitle}>My Profile</h1>
@@ -133,7 +134,9 @@ const Profile = () => {
             </div>
             <div className={styles.statsRow}>
               <p className={styles.statsLabel}>Favorite Dish:</p>
-              <p className={styles.statsValue}>{favoriteProduct.name}</p>
+              <p className={styles.statsValue}>
+                {favoriteProduct?.name || "Nothing yet"}
+              </p>
             </div>
             <div className={styles.statsRow}>
               <p className={styles.statsLabel}>Total spent:</p>

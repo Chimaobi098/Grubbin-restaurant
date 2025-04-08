@@ -9,7 +9,7 @@ const Menu = () => {
   const { setLoading } = useContext(AuthContext);
 
   useEffect(() => {
-    console.log("Menu useEffect: setLoading(true)");
+    // console.log("Menu useEffect: setLoading(true)");
 
     setLoading(true);
     API.get("/api/menu", { withCredentials: true })
@@ -21,7 +21,7 @@ const Menu = () => {
       })
       .finally(() => {
         setLoading(false);
-        console.log("Menu useEffect: setLoading(false) -- after fetch");
+        // console.log("Menu useEffect: setLoading(false) -- after fetch");
       });
   }, []);
 

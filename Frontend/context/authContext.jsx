@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
         console.error("Error checking auth:", error);
         setUser(null);
       } finally {
-        console.log("auth context useEffect: setLoading(false)");
+        // console.log("auth context useEffect: setLoading(false)");
 
         setLoading(false);
       }

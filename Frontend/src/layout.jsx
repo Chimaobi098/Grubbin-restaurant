@@ -248,6 +248,11 @@ const Layout = () => {
           </Link>
         </p>
       </footer>
+      {loading && (
+        <div className={styles.loadingOverlay}>
+          <LoadingScreen />
+        </div>
+      )}
     </>
   );
 };

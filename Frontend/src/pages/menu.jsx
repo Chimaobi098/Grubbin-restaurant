@@ -9,6 +9,8 @@ const Menu = () => {
   const { setLoading } = useContext(AuthContext);
 
   useEffect(() => {
+    console.log("Menu useEffect: setLoading(true)");
+
     setLoading(true);
     API.get("/api/menu", { withCredentials: true })
       .then((response) => {
@@ -17,7 +19,10 @@ const Menu = () => {
       .catch((error) => {
         console.error(error);
       })
-      .finally(setLoading(false));
+      .finally(() => {
+        setLoading(false);
+        console.log("Menu useEffect: setLoading(false) -- after fetch");
+      });
   }, []);
 
   return (

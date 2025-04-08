@@ -15,6 +15,9 @@ const Profile = () => {
     const fetchData = async () => {
       try {
         console.log("Setting loading true");
+        setLoading(true);
+        console.log("Profile useEffect: setLoading(true)");
+
         const [profileRes, ordersRes] = await Promise.all([
           API.get("/api/profile", { withCredentials: true }),
           API.get("/api/orders", { withCredentials: true }),
@@ -26,7 +29,7 @@ const Profile = () => {
         console.error("Fetch error:", err);
       } finally {
         setLoading(false);
-        console.log("Loading set to false");
+        console.log("Profile useEffect: setLoading(false) -- after fetch");
       }
     };
 

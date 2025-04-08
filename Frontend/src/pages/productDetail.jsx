@@ -20,6 +20,8 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
+    console.log("Product detail useEffect: setLoading(true)");
+
     setLoading(true);
 
     API.get(`/api/menu/${menuid}`)
@@ -29,7 +31,10 @@ const ProductDetail = () => {
       .catch((err) => {
         console.error(err);
       })
-      .finally(setLoading(false));
+      .finally(() => {
+        console.log("Profile useEffect: setLoading(false) -- after fetch");
+        setLoading(false);
+      });
   }, [menuid]);
 
   const increment = () => setQuantity((prev) => (prev < 9 ? prev + 1 : prev));

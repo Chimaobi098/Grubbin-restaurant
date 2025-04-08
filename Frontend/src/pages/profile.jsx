@@ -14,7 +14,6 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("Setting loading true");
         setLoading(true);
         console.log("Profile useEffect: setLoading(true)");
 

@@ -6,9 +6,9 @@ import LoadingScreen from "./loadingScreen";
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
 
-  // if (loading) {
-  //   return <LoadingScreen />;
-  // }
+  if (loading && !user) {
+    return <LoadingScreen />;
+  }
 
   if (!user) {
     // If user is not logged in, redirect to /login

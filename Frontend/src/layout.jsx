@@ -14,6 +14,7 @@ import { useContext, useState } from "react";
 import CartPopup from "./pages/Cart";
 import LoadingScreen from "../components/loadingScreen";
 import { AuthContext } from "../context/authContext";
+import Chatbot from "../components/chatbot";
 
 const Layout = () => {
   const { loading } = useContext(AuthContext);
@@ -144,6 +145,7 @@ const Layout = () => {
             />
           )}
 
+          <Chatbot />
           <Outlet />
           {menuOpen && (
             <div className={styles.mobileOverlay} onClick={handleOverlayClick}>

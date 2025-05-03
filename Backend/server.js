@@ -1,14 +1,26 @@
-const express = require("express");
-const app = express();
+// const express = require("express");
+// const app = express();
 
-require("dotenv").config();
+// require("dotenv").config();
 
-const cors = require("cors");
-const cookieParser = require("cookie-parser");
+// const cors = require("cors");
+// const cookieParser = require("cookie-parser");
 
 //imported routes
-const apiRoute = require("./routes/api");
-const authRoute = require("./routes/auth");
+// const apiRoute = require("./routes/api");
+// const authRoute = require("./routes/auth");
+
+import express from "express";
+import "dotenv/config";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+
+// Load environment variables
+
+const app = express();
+
+import apiRoute from "./routes/api.js";
+import authRoute from "./routes/auth.js";
 
 const origin =
   process.env.NODE_ENV == "production"

@@ -1,7 +1,10 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const apiController = require("../controllers/api");
-const { authenticateToken } = require("../middleware/authenticateToken");
+
+import * as apiController from "../controllers/api.js";
+import { authenticateToken } from "../middleware/authenticateToken.js";
+import { chatLimiter } from "../middleware/rateLimiter.js";
+import { chatSlowDown } from "../middleware/slowDown.js";
 
 router.get("/menu", apiController.getAllItems);
 
@@ -15,4 +18,12 @@ router.post("/orders", authenticateToken, apiController.createOrder);
 
 router.get("/profile", authenticateToken, apiController.populateProfile);
 
-module.exports = router;
+router.post("/chat", chatLimiter, apiController.chat);
+
+// router.get("text", chatbotStuff);
+
+//chatbot
+// router.post("/chat", apiController.handleChat);
+
+// module.exports = router;
+export default router;

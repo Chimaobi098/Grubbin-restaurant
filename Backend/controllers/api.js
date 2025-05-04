@@ -103,7 +103,7 @@ export const chat = async (req, res) => {
     });
   }
 
-  // 1️⃣ Top-N detection (practical override)
+  // Top-N detection (practical override)
   const topMatch = question.match(/(?:top|give me)\s+(\d+)/i);
   if (topMatch) {
     const N = Math.min(parseInt(topMatch[1], 10), 8);
@@ -132,7 +132,6 @@ export const chat = async (req, res) => {
     return res.json({ answer: dishes });
   }
 
-  // 2️⃣ Fallback to LLM chain
   try {
     const raw = await llmChain.invoke({ question });
     const dishes = parseMenuItems(raw);

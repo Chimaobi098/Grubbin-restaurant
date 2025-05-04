@@ -1,21 +1,7 @@
-// const express = require("express");
-// const app = express();
-
-// require("dotenv").config();
-
-// const cors = require("cors");
-// const cookieParser = require("cookie-parser");
-
-//imported routes
-// const apiRoute = require("./routes/api");
-// const authRoute = require("./routes/auth");
-
 import express from "express";
 import "dotenv/config";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
-// Load environment variables
 
 const app = express();
 

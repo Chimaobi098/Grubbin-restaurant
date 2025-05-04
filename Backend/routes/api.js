@@ -20,10 +20,4 @@ router.get("/profile", authenticateToken, apiController.populateProfile);
 
 router.post("/chat", chatLimiter, apiController.chat);
 
-// router.get("text", chatbotStuff);
-
-//chatbot
-// router.post("/chat", apiController.handleChat);
-
-// module.exports = router;
 export default router;

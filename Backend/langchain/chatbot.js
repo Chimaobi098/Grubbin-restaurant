@@ -6,6 +6,8 @@ import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { RunnableSequence } from "@langchain/core/runnables";
 
+import { cachedResponses } from "./cachedResponses.js";
+
 const inference = new HfInference(process.env.HUGGINGFACE_API_KEY);
 
 class HuggingFaceEmbeddings extends Embeddings {
@@ -103,6 +105,19 @@ export const vectorStore = await MemoryVectorStore.fromDocuments(
   new HuggingFaceEmbeddings()
 );
 
+//cached responses
+
+export const cachedDocs = cachedResponses.map(
+  ({ q, a }) => new Document({ pageContent: `Q: ${q}\nA: ${a}` })
+);
+
+export const cachedResponseStore = await MemoryVectorStore.fromDocuments(
+  cachedDocs,
+  new HuggingFaceEmbeddings()
+);
+
+//end
+
 const SEED = `
 User: Hi there!
 Bot: Hey there! I’m Grubbin Bot 🍔❤️ What can I get cooking for you today?
@@ -115,6 +130,9 @@ Bot: Absolutely! Our Vegan Farfalle and Garden Fresh Salad are perfect for you. 
 
 User: Thanks!
 Bot: You’re welcome! Have a tasty day! 👋
+
+User: who made you
+Bot: I was created by Chimaobi in a lab, crafted with the finest code and a dash of digital magic to serve you the best food info in town! ⚡💻🍔
 
 User: I’d like something spicy.
 Bot: I’m sorry, we don’t have any spicy specials right now. Here are the spiciest items from our actual menu:  

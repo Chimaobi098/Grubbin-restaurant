@@ -3,6 +3,9 @@ import * as db from "../db/queries.js";
 import { vectorStore, llmChain } from "../langchain/chatbot.js";
 // import { chain } from "../langchain/chatbot.js";
 
+import { cachedResponses } from "../langchain/cachedResponses.js";
+import { cachedResponseStore } from "../langchain/chatbot.js";
+
 export const specificItem = async (req, res) => {
   const item = await db.findItem(req.params.menuid);
   res.json(item);
@@ -43,17 +46,6 @@ export const populateProfile = async (req, res) => {
   }
 };
 
-// export const chat = async (req, res) => {
-//   console.log(req.body);
-//   try {
-//     const { question } = req.body;
-//     const answer = await chain.invoke({ question });
-//     res.json({ answer });
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ error: "Something went wrong" });
-//   }
-// };
 function parseMenuItems(text) {
   const regex = /\d+\.\s(.+?):\s(.+?)\s+\(\$(\d+\.\d{2})\)/g;
   const items = [];
@@ -75,6 +67,38 @@ export const chat = async (req, res) => {
     return res.status(400).json({ error: "Missing question" });
   }
 
+  // ── 1) EXACT‐MATCH CHECK
+  const normalize = (s) =>
+    s
+      .toLowerCase()
+      .replace(/[^\w\s]/g, "")
+      .trim();
+
+  const exact = cachedResponses.find(
+    ({ q }) => normalize(q) === normalize(question)
+  );
+  if (exact) {
+    return res.json({ answer: exact.a });
+  }
+
+  // ── 2) SEMANTIC‐SEARCH WITH SCORE
+  const hitsWithScores = await cachedResponseStore.similaritySearchWithScore(
+    question,
+    1
+  );
+
+  if (hitsWithScores.length > 0) {
+    const [{ pageContent }, similarity] = hitsWithScores[0];
+    const [, answer] = pageContent.split("\nA: ");
+
+    console.log({ question, matchedQuery: pageContent, similarity });
+
+    if (similarity > 0.7) {
+      return res.json({ answer: answer.trim() });
+    }
+  }
+
+  // ── 3) FALLBACK KEYWORD SHORT‐CIRCUITS
   if (/^(hi|hello|hey|hey there)$/i.test(question)) {
     return res.json({
       answer: "Hey! I’m Grubbin Bot 🍔❤️ What can I get cooking for you today?",
@@ -103,7 +127,7 @@ export const chat = async (req, res) => {
     });
   }
 
-  // Top-N detection (practical override)
+  // Top-N detection
   const topMatch = question.match(/(?:top|give me)\s+(\d+)/i);
   if (topMatch) {
     const N = Math.min(parseInt(topMatch[1], 10), 8);
@@ -137,7 +161,7 @@ export const chat = async (req, res) => {
     const dishes = parseMenuItems(raw);
 
     if (dishes.length > 0) {
-      // model returned a numbered list we could parse
+      // model returns a numbered list we could parse
       return res.json({ answer: dishes });
     } else {
       // otherwise it's a plain-text FAQ or recommendation

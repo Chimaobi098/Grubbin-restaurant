@@ -124,11 +124,3 @@ export default function Chatbot() {
     </>
   );
 }
-
-// Simulate bot reply (replace with your API call)
-// setTimeout(() => {
-//   const reply =
-//     "1. Garden Fresh Salad: Mixed greens, cherry tomatoes, cucumbers, and a light vinaigrette. ($9.99)\n2. Roasted Chicken Platter: Juicy roasted chicken served with flavorful sides. ($24.99)\n3. Spaghetti Bolognese: Rich tomato sauce with minced beef over perfectly cooked spaghetti. ($41.79)";
-//   // const reply = `You said: "${userText}". (Imagine a tasty answer here!)`;
-//   setMessages((prev) => [...prev, { from: "bot", text: reply }]);
-// }, 800);

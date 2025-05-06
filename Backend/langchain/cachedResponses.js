@@ -1,7 +1,54 @@
 export const cachedResponses = [
   {
     q: "What's on the menu?",
-    a: "We’ve got burgers, pasta, salads, waffles, and more! 🍔🍝🥗",
+    a: [
+      {
+        name: "Ice Cream Cake",
+        description: "Creamy ice cream cake topped with assorted sweets.",
+        price: 14.99,
+      },
+      {
+        name: "Margherita Pizza",
+        description:
+          "Classic pizza with fresh basil, mozzarella, and tomato sauce.",
+        price: 12.99,
+      },
+      {
+        name: "BBQ Beef Burger",
+        description:
+          "Juicy beef patty with BBQ sauce, lettuce, and cheese in a toasted bun.",
+        price: 19.99,
+      },
+      {
+        name: "Spaghetti Bolognese",
+        description:
+          "Rich tomato sauce with minced beef over perfectly cooked spaghetti.",
+        price: 41.79,
+      },
+      {
+        name: "Garden Fresh Salad",
+        description:
+          "Mixed greens, cherry tomatoes, cucumbers, and a light vinaigrette.",
+        price: 9.99,
+      },
+      {
+        name: "Grubbin Waffles",
+        description:
+          "Crispy waffles with strawberry and vanilla ice cream delight.",
+        price: 34.99,
+      },
+      {
+        name: "Vegan Farfalle",
+        description:
+          "Vegan Farfalle pasta with spinach sauce and fried chickpea.",
+        price: 32.99,
+      },
+      {
+        name: "Roasted Chicken Platter",
+        description: "Juicy roasted chicken served with flavorful sides.",
+        price: 24.99,
+      },
+    ],
   },
   {
     q: "Do you have vegetarian food?",

@@ -1,4 +1,7 @@
 import "dotenv/config";
+//mew
+import { OpenAI } from "openai/client.js";
+//
 import { HfInference } from "@huggingface/inference";
 import { Document } from "langchain/document";
 import { Embeddings } from "@langchain/core/embeddings";
@@ -9,6 +12,15 @@ import { RunnableSequence } from "@langchain/core/runnables";
 import { cachedResponses } from "./cachedResponses.js";
 
 const inference = new HfInference(process.env.HUGGINGFACE_API_KEY);
+
+//new
+// use Hugging Face router in OpenAI-compatible mode
+const client = new OpenAI({
+  apiKey: process.env.HUGGINGFACE_API_KEY,
+  baseURL: "https://router.huggingface.co/v1",
+});
+
+// //
 
 class HuggingFaceEmbeddings extends Embeddings {
   async embedDocuments(texts) {
@@ -151,6 +163,25 @@ User: {question}
 Bot:
 `);
 
+// export const llmChain = RunnableSequence.from([
+//   {
+//     context: async (input) => {
+//       const hits = await vectorStore.similaritySearch(input.question, 8);
+//       return hits.map((d) => d.pageContent).join("\n\n");
+//     },
+//     question: (input) => input.question,
+//   },
+//   prompt,
+//   async (pv) => {
+//     const out = await inference.textGeneration({
+//       model: "google/flan-t5-large",
+//       inputs: pv.toString(),
+//       parameters: { max_new_tokens: 250, temperature: 0.7 },
+//     });
+//     return out.generated_text;
+//   },
+// ]);
+
 export const llmChain = RunnableSequence.from([
   {
     context: async (input) => {
@@ -161,11 +192,19 @@ export const llmChain = RunnableSequence.from([
   },
   prompt,
   async (pv) => {
-    const out = await inference.textGeneration({
-      model: "google/flan-t5-large",
-      inputs: pv.toString(),
-      parameters: { max_new_tokens: 250, temperature: 0.7 },
+    const response = await client.chat.completions.create({
+      model: "openai/gpt-oss-120b:cerebras",
+      messages: [
+        {
+          role: "system",
+          content: "You are Grubbin Bot, a friendly food assistant.",
+        },
+        { role: "user", content: pv.toString() },
+      ],
+      max_tokens: 250,
+      temperature: 0.7,
     });
-    return out.generated_text;
+
+    return response.choices[0].message.content;
   },
 ]);

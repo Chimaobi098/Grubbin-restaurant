@@ -168,7 +168,21 @@ export const chat = async (req, res) => {
       return res.json({ answer: raw });
     }
   } catch (err) {
-    console.error("LLM error:", err);
+    if (err.response) {
+      // Hugging Face (or Axios) returned a response with error details
+      console.error(
+        "LLM error response:",
+        err.response.status,
+        err.response.data
+      );
+    } else if (err.request) {
+      // Request was made but no response received
+      console.error("LLM error no response:", err.request);
+    } else {
+      // Something went wrong before making the request
+      console.error("LLM error message:", err.message);
+    }
+
     return res.status(500).json({ error: "LLM failed" });
   }
 };
